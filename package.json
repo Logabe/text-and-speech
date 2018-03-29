@@ -1,0 +1,20 @@
+{
+  "name": "text-and-speech",
+  "version": "0.0.1",
+  "description": "A scratchX extension",
+  "dependencies": {
+    "text-to-speech-js": "~1.1.8"
+  }
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://github.com/Logabe/text-and-speech"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "express"
+  ]
+ }
+}
