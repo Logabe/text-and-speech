@@ -4,6 +4,7 @@
   "description": "A scratchX extension",
   "dependencies": {
     "text-to-speech-js": "~1.1.8"
+    "speech-to-text": "~0.7.4"
   }
   "engines": {
     "node": "8.x"
