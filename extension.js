@@ -1,3 +1,5 @@
+import SpeechToText from 'speech-to-text';
+var spoken;
 (function(ext) {
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
@@ -10,11 +12,28 @@
     ext.speak = function(text) {
         TextToSpeech.talk(text);
     };
+    ext.record = function() {
+        
+        const onAnythingSaid = text => console.log(`Interim text: ${text}`);
+        const onFinalised = text => spoken = ${text};
+
+        try {
+           const listener = new SpeechToText(onAnythingSaid, onFinalised);
+           listener.startListening();
+        } catch (error) {
+               console.log(error);
+        }
+    };
+    ext.said = function() {
+        return spoken;
+    };
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
          // Block type, block name, function name, parameters
-         [' ', 'speak', 'speak',"Hello world"],
+         [' ', 'speak', 'speak', 'Hello world'],
+         [' ', 'record', 'record'],
+         ['w', 'said', 'said']
         ]
     };
 
